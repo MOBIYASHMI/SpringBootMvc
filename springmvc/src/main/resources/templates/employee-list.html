@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Employee Management</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="container my-2" align="center">
+    <h5>Employee List</h5>
+    <table style="width:80%" border="1" class="table table-striped table-responsive-md">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="employee:${emplist}">
+                <td th:text="${employee.id}"></td>
+                <td th:text="${employee.name}"></td>
+                <td th:text="${employee.email}"></td>
+                <td th:text="${employee.location}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/index}" class="btn btn-primary" style="color:white;">Back to home</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Employee Management</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <style>
+        h1{
+            color: black;
+            font-weight: bold;
+            margin: 10px;
+        }
+        input{
+            margin:20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="width:100%" align="center">
+        <h1>Employee Form</h1>
+        <form action="#" th:action="@{/save}" th:object="${employee}" method="post">
+            <input type="text" th:field="*{id}" placeholder="Enter Employee Id"
+                   class="form-control mb-4 col-4">
+            <input type="text" th:field="*{name}"
+                   placeholder="Enter Employee Name" class="form-control mb-4 col-4"/>
+            <input type="text" th:field="*{email}"
+                   placeholder="Enter Employee Email" class="form-control mb-4 col-4"/>
+            <input type="text" th:field="*{location}"
+                   placeholder="Enter Employee Location" class="form-control mb-4 col-4"/>
+            <button type="submit" class="btn btn-primary col-2">Save Employee</button>
+        </form>
+        <br>
+        <a th:href="@{/displayAll}" class="btn btn-primary col-2" style="color:white;">Display employee list</a>
+        <br><br>
+        <a th:href="@{/searchbyid}" class="btn btn-primary col-2" style="color:white;">Search Employee</a>
+    </div>
+</body>
+</html>
